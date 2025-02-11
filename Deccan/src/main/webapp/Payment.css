@@ -1,0 +1,153 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: navy;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+/* Payment Section Styles */
+.payment-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    margin-bottom: 15px;
+    color: navy;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-method .payment-option {
+    margin-bottom: 10px;
+}
+
+.booking-summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.booking-summary li {
+    padding: 5px 0;
+}
+
+.submit-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: navy;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center; /* Aligns the radio button and label horizontally */
+    margin-bottom: 15px;  /* Adds space between payment options */
+    font-size: 1.1em;     /* Sets font size for better readability */
+}
+
+.payment-option input[type="radio"] {
+    appearance: none; /* Removes default browser styling */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid navy; /* Border color for the radio button */
+    margin-right: 10px; /* Adds space between the radio button and the label */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+    position: relative;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.payment-option input[type="radio"]:checked {
+    background-color: navy; /* Color of the radio button when selected */
+    border-color: navy; /* Darker border when selected */
+}
+
+.payment-option input[type="radio"]:checked::after {
+    content: ''; /* Creates a small inner circle to indicate selection */
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.payment-option label {
+    font-size: 1em;
+    color: #333;
+    cursor: pointer; /* Makes the label clickable */
+    transition: color 0.3s;
+}
+
+.payment-option label:hover {
+    color: navy; /* Changes label color when hovering */
+}
+
+.payment-option input[type="radio"]:focus {
+    outline: none;
+    border-color: navy; /* Adds border color when radio button is focused */
+}
+
+.payment-option input[type="radio"]:checked + label {
+    font-weight: bold; /* Makes the label bold when selected */
+}

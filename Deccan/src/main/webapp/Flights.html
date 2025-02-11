@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1d1d008ec7.js" crossorigin="anonymous"></script>
+    <title>Flights</title>
+    <style>
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 600px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin: 0 15px;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: white;
+        }
+
+        .footer-social a:hover {
+            text-decoration: underline;
+        }
+
+        .search-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .search-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+</head>
+
+<formbody>
+    <div id="start" style="height: 500px; background-color: rgb(5, 5, 81); color: white;">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1 style="font-family: 'Times New Roman', Times, serif;padding-top: 50px;">Air Trip</h1>
+                    <br>
+                    <a href="Flights.html" type="button" class="btn btn-light">Flights <i class="fa-solid fa-plane-departure"></i></a>
+                                </div>
+                <div class="col" style="padding-top: 50px;"></div>
+                <div class="col"></div>
+                <div class="col">
+                    <h1 style="margin-top: 50px; font-family: 'Times New Roman', Times, serif; margin-left: 10px;">
+                        <i class="fa-solid fa-plane-departure"></i> Flights
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 40px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="font-family: 'Times New Roman', Times, serif;">Millions of cheap flights. One simple search.</h1>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <h2 style="font-family: 'Times New Roman', Times, serif; margin-left: 115px; margin-top: 40px;"> Search Flights </h2>
+        </div>
+        <br>
+        
+        <form action="Find" method="get">
+        <div class="container search-container" style="font-family: 'Times New Roman', Times, serif;">
+		
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="source" style="color: black;">From</label>
+                    <input type="text" id="source" class="form-control" placeholder="Enter Source" name="from">
+                </div>
+                <div class="col-md-3">
+                    <label for="destination" style="color: black;">To</label>
+                    <input type="text" id="destination" class="form-control" placeholder="Enter Destination" name="To">
+                </div>
+                <div class="col-md-3">
+                    <label for="departure-date" style="color: black;">Departure Date</label>
+                    <input type="date" id="departure-date" class="form-control" name="Bdate">
+                </div>
+
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-3">
+                    <label for="passengers" style="color: black;">Passengers</label>
+                    <input type="number" id="passengers" class="form-control" placeholder="Number of Passengers">
+                </div>
+                <div class="col-md-3">
+                    <label for="flight-class" style="color: black;">Flight Class</label>
+                    <select id="flight-class" class="form-select">
+                        <option value="economy">Economy</option>
+                        <option value="business">Business</option>
+                        <option value="first">First Class</option>
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button class="search-button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+
+        <div class="footer-social">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+
+        <p>&copy; 2024 | Air Trip</p>
+    </footer>
+</body>
+</html>

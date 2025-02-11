@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="Booking.css">
+    <script>
+
+		function change()
+		{
+			var d = document.getElementById("category");
+			var display = d.options[d.selectedIndex].value;
+			document.getElementById("price").value=display;
+		}
+		
+		function amount()
+		{
+			var d=parseInt(document.getElementById("price").value);
+			var e=parseInt(document.getElementById("seat").value);
+			document.getElementById("net").value=d*e;	
+		}
+        
+        
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                flightNum: urlParams.get('flightNum'),
+                flightName: urlParams.get('flightName'),
+                source: urlParams.get('source'),
+                destination: urlParams.get('destination'),
+                date: urlParams.get('date')
+            };
+        }
+
+        
+        function displayFlightDetails() {
+            const params = getQueryParams();
+            document.getElementById("flightNum").innerText = params.flightNum;
+            document.getElementById("flightName").innerText = params.flightName;
+            document.getElementById("source").innerText = params.source;
+            document.getElementById("destination").innerText = params.destination;
+            document.getElementById("date").innerText = params.date;
+
+            
+            document.getElementById("flightNumHidden").value = params.flightNum;
+            document.getElementById("flightNameHidden").value = params.flightName;
+            document.getElementById("sourceHidden").value = params.source;
+            document.getElementById("destinationHidden").value = params.destination;
+            document.getElementById("dateHidden").value = params.date;
+        }
+
+        window.onload = displayFlightDetails;
+    </script>
+</head>
+<body style="font-family: 'Times New Roman', Times, serif;">
+    <form action="Booking" method="post">
+        <h1>Booking Details</h1>
+        <table border="1">
+            <tr><th>Flight Number</th><td id="flightNum"></td></tr>
+            <tr><th>Flight Name</th><td id="flightName"></td></tr>
+            <tr><th>Source</th><td id="source"></td></tr>
+            <tr><th>Destination</th><td id="destination"></td></tr>
+            <tr><th>Date</th><td id="date"></td></tr>
+            <tr><th>Name</th><td><input type="text" name="name" required> </td></tr>
+            <tr><th>Mobile No.</th><td><input type="text" name="mobile" required> </td></tr>
+            <tr><th>Category</th>            <td>
+                <select  name="category"   id="category" onchange="change()" >
+                    <option value="4300">Economy</option>
+                    <option value="6800">First Class</option>
+                    <option value="12000">Buisness</option>
+                </select>
+            </td></tr>
+            <tr><th>Price</th><td><input type="text" name="price" id="price"> </td></tr>
+
+            
+            
+            
+            <tr><th>No. Of Seats</th><td><input type="number" name="seat" id="seat"> </td></tr>
+            
+            <tr><th>Net Amount</th><td><input type="text" name="net" id="net" onclick="amount()"> </td></tr>
+            
+            
+            
+        </table>
+
+        
+        <input type="hidden" name="flightNum" id="flightNumHidden">
+        <input type="hidden" name="flightName" id="flightNameHidden">
+        <input type="hidden" name="source" id="sourceHidden">
+        <input type="hidden" name="destination" id="destinationHidden">
+        <input type="hidden" name="date" id="dateHidden">
+
+        
+        <input type="submit" value="Confirm Booking">
+    </form>
+</body>
+</html>
